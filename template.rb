@@ -13,7 +13,7 @@ gem 'ym_permalinks'
 
 inside(".") do
   open("Gemfile", 'a') do |file|
-    file << "group :development do\n"
+    file << "\ngroup :development do\n"
     file << "  gem 'growl'\n"
     file << "  gem 'mailcatcher'\n"
     file << "  gem 'ruby-debug19'\n"
@@ -77,22 +77,28 @@ inside('config') do
     file << file_text.gsub(/whitelist_attributes = true/, 'whitelist_attributes = false')
   end
   
-  open('environments/development.rb', 'a') do |file|
-    file << "\nconfig.action_mailer.default_url_options = {:host => 'localhost:3000'}\n"
-    file << "# Send email to mailcatcher\n"
-    file << "config.action_mailer.delivery_method = :smtp\n"
-    file << "config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }"
+  file_text = File.read('environments/development.rb')
+  open('environments/development.rb', 'w') do |file|
+    file << file_text.gsub(/end$/, "  config.action_mailer.default_url_options = {:host => 'localhost:3000'}\n")
+    # file << "\nconfig.action_mailer.default_url_options = {:host => 'localhost:3000'}\n"
+    file << "  # Send email to mailcatcher\n"
+    file << "  config.action_mailer.delivery_method = :smtp\n"
+    file << "  config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }\n"
+    file << "end"
   end
 
-  open('environments/production.rb', 'a') do |file|
-    file << "\nconfig.action_mailer.smtp_settings = {\n"
-    file << "  :address        => 'mail.studentbabble.com',\n"
-    file << "  :domain         => 'mail.studentbabble.com',\n"
-    file << "  :authentication => :login,\n"
-    file << "  :user_name      => 'info@studentbabble.com',\n"
-    file << "  :password       => 'm:HE4,4JF2KL_{mG*;IG;(xGGjOA.;r',\n"
-    file << "  :enable_starttls_auto => false\n"
-    file << "}"
+  file_text = File.read('environments/production.rb')
+  open('environments/production.rb', 'w') do |file|
+    file << file_text.gsub(/end$/, "  config.action_mailer.smtp_settings = {\n")    
+    # file << "\nconfig.action_mailer.smtp_settings = {\n"
+    file << "    :address        => 'mail.studentbabble.com',\n"
+    file << "    :domain         => 'mail.studentbabble.com',\n"
+    file << "    :authentication => :login,\n"
+    file << "    :user_name      => 'info@studentbabble.com',\n"
+    file << "    :password       => 'm:HE4,4JF2KL_{mG*;IG;(xGGjOA.;r',\n"
+    file << "    :enable_starttls_auto => false\n"
+    file << "  }\n"
+    file << "end"
   end
   
 end
