@@ -1,3 +1,6 @@
+# make sure the conan directory lives at ~/Rails/conan
+# run: rails _3.1.0_ new -m conan/template.rb -d mysql
+
 require 'yaml'
 
 route "root :to => 'home#index'"
