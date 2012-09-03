@@ -1,3 +1,5 @@
+require 'yaml'
+
 route "root :to => 'home#index'"
 add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
@@ -99,6 +101,23 @@ inside('config') do
     file << "    :enable_starttls_auto => false\n"
     file << "  }\n"
     file << "end"
+  end
+  
+  db_yaml = YAML.load_file('database.yml')
+  %w{development test production}.each do |env|
+    {'pool' => 5, 'timeout' => 5000}.each do |k, v|
+      db_yaml[env][k] = v
+    end
+    unless env == 'development'
+      %w{encoding reconnect username password socket}.each do |k|
+        db_yaml[env].delete(k)
+      end
+      db_yaml[env]['adapter'] = 'sqlite3'
+      db_yaml[env]['database'] = "db/#{env}.sqlite3"
+    end
+  end
+  open('database.yml', 'w') do |file|
+    file << YAML::dump(db_yaml)
   end
   
 end
