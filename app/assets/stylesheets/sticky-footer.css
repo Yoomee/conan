@@ -1,0 +1,29 @@
+/*========== Footer ==========*/
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/sticky-footer/
+*/
+
+html, body {
+  height: 100%;
+}
+.main-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+  clear: both;
+  height: 60px;
+}
+.footer-wrapper {
+	clear: both;
+	height: 60px;
+}
+.footer {
+  border-top: 1px solid #EEE;
+  margin-top: 9px;
+  padding-top: 9px;
+  color: #BFBFBF;
+}

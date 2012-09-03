@@ -9,7 +9,8 @@
  *= require ym_core 
  *= require redactor
  *= require ym_cms 
- *= require font-awesome 
+ *= require font-awesome
+ *= require sticky-footer 
  *= require_self
  
 */
