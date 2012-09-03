@@ -139,5 +139,10 @@ run('bundle exec rails g ym_core:install')
 run('bundle exec rails g ym_cms:install')
 run('bundle exec rails g ym_users:install')
 run('bundle exec rails g ym_permalinks:install')
-run('bundle exec rake db:migrate')
-run('bundle exec rake db:seed')
+
+if yes?("Run migrations?")
+  run('bundle exec rake db:migrate')
+  if yes?("Run seeds?")
+    run('bundle exec rake db:seed')
+  end
+end
