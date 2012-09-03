@@ -67,11 +67,15 @@ Dir["../conan/*/"].each do |directory_path|
   directory = directory_path.split("/").last
   inside(directory) do
     Dir["../../conan/#{directory}/**/*.*"].each do |file_path|
-      file_name = file_path.sub("../conan/", '')
-      run "mkdir -p #{file_name.split("/").first(file_name.split("/").size-1).join("/")}"
-      file_text = File.read(file_path)
-      open(file_name, "w") do |file|
-        file << file_text.gsub(/\$AppName/, @app_name.camelize).gsub(/\$app_name/, @app_name.underscore).gsub(/\$APP_NAME/, @app_name.humanize.upcase).gsub(/\$App_name/, @app_name.humanize)
+      file_name = file_path.sub("../../conan/", '')
+      run("mkdir -p #{file_name.split("/").first(file_name.split("/").size-1).join("/")}")
+      if file_name.match(/^app\/assets/)
+        run("cp #{file_path} #{file_name}")
+      else
+        file_text = File.read(file_path)
+        open(file_name, "w") do |file|
+          file << file_text.gsub(/\$AppName/, @app_name.camelize).gsub(/\$app_name/, @app_name.underscore).gsub(/\$APP_NAME/, @app_name.humanize.upcase).gsub(/\$App_name/, @app_name.humanize)
+        end
       end
     end
   end
