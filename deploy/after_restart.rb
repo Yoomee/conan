@@ -1,0 +1,1 @@
+run "cd #{current_path} && bundle exec whenever --update-crontab #{current_path}"

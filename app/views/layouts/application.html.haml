@@ -1,0 +1,17 @@
+!!!5
+%html
+  %head
+    %title
+      $APP_NAME
+      ="- #{@page_title}" if @page_title.present?
+    =stylesheet_link_tag("application")
+    =javascript_include_tag("application")
+    =csrf_meta_tags
+    =yield :head
+    =google_analytics_js
+  -body_tag do
+    .main-wrapper
+      =yield_with_bootstrap(yield)
+      .push
+    .footer-wrapper
+      =render("layouts/footer")
