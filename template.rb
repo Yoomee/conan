@@ -56,6 +56,7 @@ end
 
 run "rm public/index.html "
 run "rm app/assets/images/rails.png"
+run "rm app/assets/javascripts/application.js"
 run "rm app/views/layouts/application.html.erb"
 
 Dir["../conan/*/"].each do |directory_path|
