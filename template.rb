@@ -1,5 +1,5 @@
 # make sure the conan directory lives at ~/Rails/conan
-# run: rails _3.1.0_ new -m conan/template.rb -d mysql
+# run: rails _3.1.0_ new app_name -m conan/template.rb -d mysql
 
 require 'yaml'
 
@@ -57,10 +57,11 @@ end
 #  gem "sqlite3"
 # end
 
-run "rm public/index.html "
-run "rm app/assets/images/rails.png"
-run "rm app/assets/javascripts/application.js"
-run "rm app/views/layouts/application.html.erb"
+run("rm public/index.html")
+run("rm app/assets/images/rails.png")
+run("rm app/assets/javascripts/application.js")
+run("rm app/views/layouts/application.html.erb")
+run("cp ../conan/.gitignore .")
 
 Dir["../conan/*/"].each do |directory_path|
   directory = directory_path.split("/").last
