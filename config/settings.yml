@@ -1,3 +1,3 @@
-site_name: $Site_name
-site_email: info@$site_name.yoomee.com
-live_site_url: http://$site_name:$site_name123@$site_name.yoomee.com
+site_name: $App_name
+site_email: info@$app_name.yoomee.com
+live_site_url: http://$app_name:$app_name123@$app_name.yoomee.com

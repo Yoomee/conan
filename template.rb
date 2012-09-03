@@ -64,7 +64,7 @@ Dir["../conan/*/"].each do |directory_path|
       run "mkdir -p #{file_name.split("/").first(file_name.split("/").size-1).join("/")}"
       file_text = File.read(file_path)
       open(file_name, "w") do |file|
-        file << file_text.gsub(/$AppName/, @app_name.camelize).gsub(/$app_name/, @app_name.underscore).gsub(/$APP_NAME/, @app_name.humanize.upcase).gsub(/$App_name/, @app_name.humanize)
+        file << file_text.gsub(/\$AppName/, @app_name.camelize).gsub(/\$app_name/, @app_name.underscore).gsub(/\$APP_NAME/, @app_name.humanize.upcase).gsub(/\$App_name/, @app_name.humanize)
       end
     end
   end
