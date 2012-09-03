@@ -61,7 +61,7 @@ run("rm public/index.html")
 run("rm app/assets/images/rails.png")
 run("rm app/assets/javascripts/application.js")
 run("rm app/views/layouts/application.html.erb")
-run("cp ../conan/.gitignore .")
+run("cp ../conan/gitignore .gitignore")
 
 Dir["../conan/*/"].each do |directory_path|
   directory = directory_path.split("/").last
