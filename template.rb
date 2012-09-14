@@ -61,13 +61,14 @@ run("rm public/index.html")
 run("rm app/assets/images/rails.png")
 run("rm app/assets/javascripts/application.js")
 run("rm app/views/layouts/application.html.erb")
-run("cp ../conan/gitignore .gitignore")
+run("cp #{ENV['HOME']}/Rails/conan/gitignore .gitignore")
 
-Dir["../conan/*/"].each do |directory_path|
+Dir["#{ENV['HOME']}/Rails/conan/*/"].each do |directory_path|
   directory = directory_path.split("/").last
+  break if directory == 'ym_gem'
   inside(directory) do
-    Dir["../../conan/#{directory}/**/*.*"].each do |file_path|
-      file_name = file_path.sub("../../conan/#{directory}/", '')
+    Dir["#{ENV['HOME']}/Rails/conan/#{directory}/**/*.*"].each do |file_path|
+      file_name = file_path.sub("#{ENV['HOME']}/Rails/conan/#{directory}/", '')
       if (file_directory = file_name.split("/").first(file_name.split("/").size-1).join("/")).present?
         run("mkdir -p #{file_directory}")
       end
@@ -102,7 +103,7 @@ inside('config') do
 
   file_text = File.read('environments/production.rb')
   open('environments/production.rb', 'w') do |file|
-    file << file_text.gsub(/end$/, "  config.action_mailer.smtp_settings = {\n")    
+    file << file_text.gsub(/end$/, "  config.action_mailer.smtp_settings = {\n")
     # file << "\nconfig.action_mailer.smtp_settings = {\n"
     file << "    :address        => 'mail.studentbabble.com',\n"
     file << "    :domain         => 'mail.studentbabble.com',\n"
