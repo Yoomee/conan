@@ -4,6 +4,8 @@
 
 add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
+run("cp #{ENV['HOME']}/Rails/conan/ym_gem/gitignore .gitignore")
+
 Dir["#{ENV['HOME']}/Rails/conan/ym_gem/*/"].each do |directory_path|
   directory = directory_path.split("/").last
   inside(directory) do
