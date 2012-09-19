@@ -40,6 +40,7 @@ inside(".") do
     file << "  s.add_development_dependency 'capybara'\n"
     file << "  s.add_development_dependency 'guard-rspec'\n"
     file << "  s.add_development_dependency 'geminabox'\n"
+    file << "  s.add_development_dependency 'rb-fsevent', '~> 0.9.1'\n"
     file << "end"
   end
 end
