@@ -1,0 +1,25 @@
+STEP 1: To create a new conan app
+
+$ cd ~/Rails
+$ rvm use 1.9.2
+$ rails _3.1.0_ new app_name -m conan/template.rb -d mysql
+
+STEP 2: 
+
+Create a new project on the Gitlab website
+$ cd app_name
+$ gitx (then commit everything)
+$ git remote add origin git@gitlab.yoomee.com:picnic_conan.git
+$ git push -u origin master
+
+NOTES:
+
+1. Make sure the conan directory lives at ~/Rails/conan
+2. app_name will be used for name of database etc
+3. Create .rvmrc that contains "rvm use 1.9.2"
+4. Afterwards run "bundle exec rake db:migrate"
+5. Create users with "bundle exec rake db:seed"
+
+
+
+
