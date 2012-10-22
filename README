@@ -8,8 +8,9 @@ STEP 2:
 
 Create a new project on the Gitlab website
 $ cd app_name
+$ git init
 $ gitx (then commit everything)
-$ git remote add origin git@gitlab.yoomee.com:picnic_conan.git
+$ git remote add origin git@gitlab.yoomee.com:app_name.git
 $ git push -u origin master
 
 NOTES:
