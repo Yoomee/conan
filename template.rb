@@ -7,10 +7,10 @@ gem 'exception_notification'
 gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'whenever', :require => false
 gem "ym_core", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem "ym_videos", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem "ym_cms", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem "ym_users", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem "ym_permalinks", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
+gem "ym_videos", :git => 'git@gitlab.yoomee.com:ym_videos.git', :branch => 'rails-3-2'
+gem "ym_cms", :git => 'git@gitlab.yoomee.com:ym_cms.git', :branch => 'rails-3-2'
+gem "ym_users", :git => 'git@gitlab.yoomee.com:ym_users.git', :branch => 'rails-3-2'
+gem "ym_permalinks", :git => 'git@gitlab.yoomee.com:ym_permalinks.git', :branch => 'rails-3-2'
 
 # inside(".") do
 #   open("Gemfile", 'a') do |file|
