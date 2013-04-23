@@ -2,7 +2,7 @@ STEP 1: To create a new conan app
 
 $ cd ~/Rails
 $ rvm use 1.9.2
-$ rails _3.1.0_ new app_name -m conan/template.rb -d mysql
+$ rails new app_name -m conan/template.rb -d mysql
 
 STEP 2: 
 
