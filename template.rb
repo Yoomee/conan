@@ -4,37 +4,13 @@ route "root :to => 'home#index'"
 add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
 gem 'exception_notification'
-gem 'formtastic-bootstrap', :git => "git://github.com/cgunther/formtastic-bootstrap.git", :branch => "bootstrap-2"
 gem 'whenever', :require => false
-gem "ym_core", :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem "ym_videos", :git => 'git@gitlab.yoomee.com:ym_videos.git', :branch => 'rails-3-2'
-gem "ym_cms", :git => 'git@gitlab.yoomee.com:ym_cms.git', :branch => 'rails-3-2'
-gem "ym_users", :git => 'git@gitlab.yoomee.com:ym_users.git', :branch => 'rails-3-2'
-gem "ym_permalinks", :git => 'git@gitlab.yoomee.com:ym_permalinks.git', :branch => 'rails-3-2'
+gem 'ym_core', :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
+gem 'ym_videos', :git => 'git@gitlab.yoomee.com:ym_videos.git', :branch => 'rails-3-2'
+gem 'ym_cms', :git => 'git@gitlab.yoomee.com:ym_cms.git', :branch => 'rails-3-2'
+gem 'ym_users', :git => 'git@gitlab.yoomee.com:ym_users.git', :branch => 'rails-3-2'
+gem 'ym_permalinks', :git => 'git@gitlab.yoomee.com:ym_permalinks.git', :branch => 'rails-3-2'
 
-# inside(".") do
-#   open("Gemfile", 'a') do |file|
-#     file << "\ngroup :development do\n"
-#     file << "  gem 'growl'\n"
-#     file << "  gem 'mailcatcher'\n"
-#     file << "  gem 'ruby-debug19'\n"
-#     file << "  gem 'ym_tools'\n"
-#     file << "  gem 'passenger'\n"
-#     file << "end\n"
-#     file << "group :development, :test do\n"
-#     file << "  gem 'rspec-rails'\n"
-#     file << "end\n"
-#     file << "group :test do\n"
-#     file << "  gem 'factory_girl_rails'\n"
-#     file << "  gem 'shoulda-matchers'\n"
-#     file << "  gem 'capybara'\n"
-#     file << "  gem 'guard-rspec'\n"
-#     file << "  gem 'sqlite3'\n"
-#     file << "end\n"
-#   end
-# end
-
-#TODO: with rails 3.2 this will work instead of the above
 gem_group :development do
  gem 'growl'
  gem 'letter_opener'
