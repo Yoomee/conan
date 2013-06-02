@@ -5,11 +5,9 @@ add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
 gem 'exception_notification'
 gem 'whenever', :require => false
-gem 'ym_core', :git => 'git@gitlab.yoomee.com:ym_core.git', :branch => 'rails-3-2'
-gem 'ym_videos', :git => 'git@gitlab.yoomee.com:ym_videos.git', :branch => 'rails-3-2'
-gem 'ym_cms', :git => 'git@gitlab.yoomee.com:ym_cms.git', :branch => 'rails-3-2'
-gem 'ym_users', :git => 'git@gitlab.yoomee.com:ym_users.git', :branch => 'rails-3-2'
-gem 'ym_permalinks', :git => 'git@gitlab.yoomee.com:ym_permalinks.git', :branch => 'rails-3-2'
+gem "ym_core", "~> 1.0.8"
+gem "ym_users", "~> 1.0.2"
+gem "ym_cms", "~> 0.3.11"
 
 gem_group :development do
  gem 'growl'
