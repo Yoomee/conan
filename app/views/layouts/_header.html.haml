@@ -6,7 +6,7 @@
         %li{:class => "#{current_page?(root_path) ? 'active' : ''}"}
           =link_to("Home", root_path)
       %ul.nav.pull-right
-        -if logged_in?
+        -if current_user
           %li.dropdown
             =link_to("#", :class => "dropdown-toggle", :data => {:toggle => "dropdown"}) do
               %i.icon-user
