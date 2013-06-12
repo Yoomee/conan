@@ -103,9 +103,13 @@ end
 
 run('bundle')
 rake('db:create')
+puts('Sleeping for 10 seconds for each gem....')
 generate('ym_core:install')
+sleep(10)
 generate('ym_cms:install')
+sleep(10)
 generate('ym_users:install')
+sleep(10)
 generate('ym_permalinks:install')
 
 if yes?("Run migrations?")
