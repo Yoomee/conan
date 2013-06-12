@@ -32,7 +32,7 @@ run("rm app/assets/images/rails.png")
 run("rm app/assets/javascripts/application.js")
 run("rm app/views/layouts/application.html.erb")
 run("cp #{ENV['HOME']}/Rails/conan/gitignore .gitignore")
-run("cp #{ENV['HOME']}/Rails/conan/rvmrc .rvmrc")
+run("cp #{ENV['HOME']}/Rails/conan/ruby-version .ruby-version")
 
 Dir["#{ENV['HOME']}/Rails/conan/*/"].each do |directory_path|
   directory = directory_path.split("/").last
