@@ -5,9 +5,9 @@ add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
 gem 'exception_notification'
 gem 'whenever', :require => false
-gem "ym_core", "~> 1.0.8"
-gem "ym_users", "~> 1.0.2"
-gem "ym_cms", "~> 0.3.11"
+gem 'ym_core', '~> 1.0.8'
+gem 'ym_users', '~> 1.0.2'
+gem 'ym_cms', '~> 1.0.0'
 
 gem_group :development do
  gem 'growl'
