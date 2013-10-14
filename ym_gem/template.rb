@@ -27,21 +27,23 @@ end
 inside(".") do
   
   run("cp #{ENV['HOME']}/Rails/conan/ym_gem/gitignore .gitignore")
+  run("cp #{ENV['HOME']}/Rails/conan/ym_gem/Guardfile .")
   
-  open(".rvmrc", "w") do |file|
-    file << "rvm use 1.9.2"
+  open(".ruby-version", "w") do |file|
+    file << "1.9.2"
   end
   
   file_text = File.read("#{@name}.gemspec")
   open("#{@name}.gemspec", 'w') do |file|
-    file << file_text.gsub(/end$/, "  s.add_dependency 'ym_core', '~> 0.1'\n")
+    file << file_text.gsub(/end$/, "  s.add_dependency 'ym_core', '~> 1.0'\n")
     file << "  s.add_development_dependency 'rspec-rails'\n"
     file << "  s.add_development_dependency 'factory_girl_rails'\n"
     file << "  s.add_development_dependency 'shoulda-matchers'\n"
-    file << "  s.add_development_dependency 'capybara'\n"
+    file << "  s.add_development_dependency 'capybara', '~> 1.1.0'\n"
     file << "  s.add_development_dependency 'guard-rspec'\n"
     file << "  s.add_development_dependency 'geminabox'\n"
-    file << "  s.add_development_dependency 'rb-fsevent', '~> 0.9.1'\n"
+    file << "  s.add_development_dependency 'ym_tools', '~> 1.0.0'\n"
+    file << "  s.add_development_dependency 'listen', '~> 1.3.1'\n"
     file << "end"
   end
 end
