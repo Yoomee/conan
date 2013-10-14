@@ -10,7 +10,7 @@ Create a new project on the Gitlab website
 $ cd app_name
 $ git init
 $ gitx (then commit everything)
-$ git remote add origin git@gitlab.yoomee.com:app_name.git
+$ git remote add origin git@gitlab.yoomee.com:yoomee/app_name.git
 $ git push -u origin master
 
 NOTES:
@@ -21,6 +21,19 @@ NOTES:
 4. Afterwards run "bundle exec rake db:migrate"
 5. Create users with "bundle exec rake db:seed"
 
+==========================================================================================
 
+STEP 1: To create a new ym gem
 
+$ cd ~/Rails/Gems
+$ rvm use 1.9.2
+$ rails plugin new gem_name --full -m ~/Rails/conan/ym_gem/template.rb
 
+STEP 2:
+
+Create a new project on the Gitlab website
+$ cd gem_name
+$ git init
+$ gitx (then commit everything)
+$ git remote add origin git@gitlab.yoomee.com:yoomee/gem_name.git
+$ git push -u origin master
