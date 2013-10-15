@@ -44,6 +44,8 @@ inside(".") do
     file << "  s.add_development_dependency 'geminabox'\n"
     file << "  s.add_development_dependency 'ym_tools', '~> 1.0.0'\n"
     file << "  s.add_development_dependency 'listen', '~> 1.3.1'\n"
+    file << "  s.add_development_dependency 'capybara-webkit'\n"
+    file << "  s.add_development_dependency 'database_cleaner'\n"
     file << "end"
   end
 end
@@ -53,16 +55,5 @@ inside("lib") do
   open("#{@name}.rb", "w") do |file|
     file << "require 'ym_core'\n"
     file << file_text
-  end  
-  # run("mkdir -p generators/#{@name}")
-  # open("generators/#{@name}/install_generator.rb", 'w') do |file|
-  #   file << "module #{@name.camelize}\n"
-  #   file << "  module Generators\n"
-  #   file << "    class InstallGenerator < Rails::Generators::Base\n"
-  #   file << "      include YmCore::Generators::Migration\n"
-  #   file << "      include YmCore::Generators::Ability\n\n"
-  #   file << "      source_root File.expand_path('../templates', __FILE__)\n"
-  #   file << "      desc 'Installs #{@name.camelize}.'\n"
-  #   file << ""
-  # end
+  end
 end
