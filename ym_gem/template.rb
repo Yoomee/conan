@@ -1,7 +1,3 @@
-# make sure the conan directory lives at ~/Rails/conan
-# cd ~/Rails/Gems
-# run: rails _3.1.0_ plugin new gem_name --full -m ~/Rails/conan/ym_gem/template.rb
-
 add_source 'https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com'
 
 Dir["#{ENV['HOME']}/Rails/conan/ym_gem/*/"].each do |directory_path|
@@ -30,7 +26,7 @@ inside(".") do
   run("cp #{ENV['HOME']}/Rails/conan/ym_gem/Guardfile .")
   
   open(".ruby-version", "w") do |file|
-    file << "1.9.2"
+    file << "1.9.3"
   end
   
   file_text = File.read("#{@name}.gemspec")
@@ -40,9 +36,12 @@ inside(".") do
     file << "  s.add_development_dependency 'factory_girl_rails'\n"
     file << "  s.add_development_dependency 'shoulda-matchers'\n"
     file << "  s.add_development_dependency 'capybara', '~> 1.1.0'\n"
+    file << "  s.add_development_dependency 'capybara-webkit'\n"
+    file << "  s.add_development_dependency 'database_cleaner', '1.2.0'\n"
     file << "  s.add_development_dependency 'guard-rspec'\n"
+    file << "  s.add_development_dependency 'growl'\n"
     file << "  s.add_development_dependency 'geminabox'\n"
-    file << "  s.add_development_dependency 'ym_tools', '~> 1.0.0'\n"
+    file << "  s.add_development_dependency 'ym_tools', '~> 0.1.10'\n"
     file << "  s.add_development_dependency 'listen', '~> 1.3.1'\n"
     file << "  s.add_development_dependency 'capybara-webkit'\n"
     file << "  s.add_development_dependency 'database_cleaner'\n"

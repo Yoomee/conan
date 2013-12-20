@@ -26,8 +26,8 @@ NOTES:
 STEP 1: To create a new ym gem
 
 $ cd ~/Rails/Gems
-$ rvm use 1.9.2
-$ rails plugin new gem_name --full -m ~/Rails/conan/ym_gem/template.rb
+$ rvm use 1.9.3
+$ rails _3.2.13_ plugin new gem_name --full -m ~/Rails/conan/ym_gem/template.rb
 
 STEP 2:
 
